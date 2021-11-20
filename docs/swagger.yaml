@@ -1,0 +1,296 @@
+definitions:
+  domain.RegisterDTO:
+    properties:
+      create_by:
+        type: string
+      create_date:
+        type: string
+      email:
+        type: string
+      nama_user:
+        type: string
+      password:
+        type: string
+      telp:
+        type: string
+    type: object
+  domain.UpdateUserDTO:
+    properties:
+      email:
+        type: string
+      id:
+        type: integer
+      telp:
+        type: string
+      update_by:
+        type: string
+      update_date:
+        type: string
+    type: object
+  message.Response:
+    properties:
+      data: {}
+      message:
+        type: string
+      status:
+        type: integer
+    type: object
+info:
+  contact:
+    email: mraisadlani@gmail.com
+    name: Muhammad Rais Adlani
+    url: https://gitlab.com/mraisadlani
+  license:
+    name: MIT
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: http://swagger.io/terms/
+paths:
+  /CreateUser:
+    post:
+      consumes:
+      - application/json
+      description: REST API User
+      parameters:
+      - description: Form Request
+        in: body
+        name: reqBody
+        required: true
+        schema:
+          $ref: '#/definitions/domain.RegisterDTO'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/message.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/message.Response'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/message.Response'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/message.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/message.Response'
+      summary: Create User
+      tags:
+      - User Controller
+  /DeleteUser/{id}:
+    post:
+      consumes:
+      - application/json
+      description: REST API User
+      parameters:
+      - description: ID User
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/message.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/message.Response'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/message.Response'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/message.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/message.Response'
+      summary: Delete User
+      tags:
+      - User Controller
+  /GetDataFromFunction:
+    get:
+      consumes:
+      - application/json
+      description: REST API User
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/message.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/message.Response'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/message.Response'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/message.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/message.Response'
+      summary: Get Data from Function
+      tags:
+      - User Controller
+  /GetDataFromView:
+    get:
+      consumes:
+      - application/json
+      description: REST API User
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/message.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/message.Response'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/message.Response'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/message.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/message.Response'
+      summary: Get Data from View
+      tags:
+      - User Controller
+  /GetUser/{id}:
+    get:
+      consumes:
+      - application/json
+      description: REST API User
+      parameters:
+      - description: ID User
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/message.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/message.Response'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/message.Response'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/message.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/message.Response'
+      summary: Get User
+      tags:
+      - User Controller
+  /UpdateUser/{id}:
+    post:
+      consumes:
+      - application/json
+      description: REST API User
+      parameters:
+      - description: ID User
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: Form Request
+        in: body
+        name: reqBody
+        required: true
+        schema:
+          $ref: '#/definitions/domain.UpdateUserDTO'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/message.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/message.Response'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/message.Response'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/message.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/message.Response'
+      summary: Update User
+      tags:
+      - User Controller
+  /ViewAllUser:
+    get:
+      consumes:
+      - application/json
+      description: REST API User
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/message.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/message.Response'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/message.Response'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/message.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/message.Response'
+      summary: Get All User
+      tags:
+      - User Controller
+swagger: "2.0"
